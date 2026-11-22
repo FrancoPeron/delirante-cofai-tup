@@ -8,6 +8,7 @@
 ## Enlaces
 
 - Repositorio público: [https://github.com/FrancoPeron/Cofia](https://github.com/FrancoPeron/delirante-cofai-tup)
+- Tablero ágil (GitHub Projects): https://github.com/users/FrancoPeron/projects/2
 
 ## Integrantes
 
@@ -129,3 +130,13 @@ Desde cualquier pantalla el usuario abre el chat y envía una consulta. El backe
 - Ramas secundarias con prefijo: `docs/…`, `feat/…`, `fix/…`.
 - Commits descriptivos con formato `tipo: descripción en presente` (por ejemplo `docs: agrega diagrama BPMN del asistente de IA`).
 - Todo PR requiere la revisión de al menos una persona antes del merge.
+
+## Backlog ágil
+
+El trabajo se gestiona en un [tablero de GitHub Projects](https://github.com/users/FrancoPeron/projects/2) con tres columnas: **Por Hacer**, **En Progreso** y **Listo**. Cada historia de usuario es un issue del repositorio y se corresponde con uno de los tres procesos BPMN modelados.
+
+| ID | Historia de usuario | Proceso BPMN | Issue | Estado |
+|---|---|---|---|---|
+| HU-1 | Como usuario de COFAI, quiero iniciar sesión con mi usuario y contraseña y poder recuperar mi acceso si la olvido, para usar la app con mis datos y mis recetas. | [Inicio de sesión](docs/bpmn/login_cofai.png) | #2 | Listo |
+| HU-2 | Como persona que se inicia en el café, quiero seguir una receta paso a paso con temporizador y un diagnóstico de mi extracción, para preparar una taza equilibrada sin conocimientos previos. | [Preparación guiada](docs/bpmn/preparacion_cofai.png) | #3 | En Progreso |
+| HU-3 | Como usuario de COFAI, quiero consultar a un asistente de IA desde cualquier pantalla, para recibir recomendaciones y mejorar mi preparación sin interrumpir lo que estoy haciendo. | [Asistente de IA](docs/bpmn/asistente_ia_cofai.png) | #4 | Por Hacer |
