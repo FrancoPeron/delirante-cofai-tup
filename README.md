@@ -7,7 +7,7 @@
 
 ## Enlaces
 
-- Repositorio público: [https://github.com/FrancoPeron/Cofia](https://github.com/FrancoPeron/delirante-cofai-tup)
+- Repositorio público: [https://github.com/FrancoPeron/delirante-cofai-tup](https://github.com/FrancoPeron/delirante-cofai-tup)
 - Tablero ágil (GitHub Projects): https://github.com/users/FrancoPeron/projects/2
 
 ## Integrantes
@@ -140,3 +140,44 @@ El trabajo se gestiona en un [tablero de GitHub Projects](https://github.com/use
 | HU-1 | Como usuario de COFAI, quiero iniciar sesión con mi usuario y contraseña y poder recuperar mi acceso si la olvido, para usar la app con mis datos y mis recetas. | [Inicio de sesión](docs/bpmn/login_cofai.png) | #2 | Listo |
 | HU-2 | Como persona que se inicia en el café, quiero seguir una receta paso a paso con temporizador y un diagnóstico de mi extracción, para preparar una taza equilibrada sin conocimientos previos. | [Preparación guiada](docs/bpmn/preparacion_cofai.png) | #3 | En Progreso |
 | HU-3 | Como usuario de COFAI, quiero consultar a un asistente de IA desde cualquier pantalla, para recibir recomendaciones y mejorar mi preparación sin interrumpir lo que estoy haciendo. | [Asistente de IA](docs/bpmn/asistente_ia_cofai.png) | #4 | Por Hacer |
+
+## Indicadores de control y estándares de desempeño
+
+Controlar es comparar lo que ocurre con un estándar definido y corregir los desvíos. Para COFAI se combinan tres momentos de control:
+
+- **Preventivo:** revisión de pares en los Pull Requests y pruebas de QA antes del lanzamiento.
+- **Concurrente:** monitoreo de tiempos de respuesta y errores con la app en uso.
+- **Posterior:** revisión periódica de las respuestas de IA marcadas como inválidas y de los indicadores comerciales.
+
+Los indicadores derivan de las metas cuantitativas de la Entrega 2 y de los campos del diccionario de datos de la Entrega 3.
+
+| Indicador | Estándar de desempeño | Fuente | Responsable |
+|---|---|---|---|
+| Tiempo de carga de la app | ≥ 90 % de los dispositivos con carga < 2 s | Monitoreo de la app | Frontend e integración de IA |
+| Tiempo de respuesta del asistente | ≥ 95 % de las consultas con `tiempo_respuesta_ms` < 3000 | Entidad `ConsultaIA` | Frontend e integración de IA |
+| Tasa de errores o caídas | < 1 % durante el primer mes | Logs del backend | Backend y base de datos |
+| Respuestas de IA útiles | Línea base a medir en la beta (`fue_util`) | Entidad `ConsultaIA` | QA y revisión |
+| Inicios de sesión fallidos | Seguimiento mensual | Logs del backend | Backend y base de datos |
+| Descargas | ≈ 2.000 en el primer mes | Tiendas de apps | Líder de proyecto |
+| Retención semanal | ≥ 30 % de los usuarios registrados | Entidad `Usuario` y analítica | Líder de proyecto |
+| Valoración pública | ≥ 4 de 5 estrellas a los 6 meses | Tiendas de apps | Líder de proyecto |
+
+## Declaración de Uso de IA
+
+Se utilizaron asistentes de IA generativa como apoyo, y su uso se declara por herramienta y por propósito. El autor revisó todo el contenido y es responsable de su veracidad y coherencia conceptual.
+
+| Herramienta | Uso en este trabajo y en el proyecto |
+|---|---|
+| **Google Gemini** | Estudio de la simbología de los modelos BPMN y de los conceptos de la materia, y comparación de resultados con los de otros asistentes. El concepto original de la aplicación y su modelado inicial se comenzaron en esta herramienta. |
+| **GitHub Copilot y DeepSeek** | Desarrollo del código de la aplicación original (Cofia), incluida la estructura de carpetas del proyecto, que se fue armando con su ayuda y se reutilizó para documentar este trabajo. |
+| **Anthropic Claude** | Estructuración de la entrega: guía de los pasos de Git y GitHub, generación de los diagramas BPMN, borradores de textos, indicadores y README. Se eligió por su buen desempeño ordenando proyectos. |
+
+Los resultados no se aceptaron sin revisión y se corrigieron varias veces en cada chat de ia algunos ejemplos son:
+
+- El asistente propuso un único diagrama combinado, y decidí separarlo en tres procesos independientes: inicio de sesión, preparación guiada y asistente de IA.
+- En el login, el borrador incluía un bloqueo de cuenta tras varios intentos fallidos. Lo eliminé porque no corresponde al funcionamiento actual de la app, y dejé solo la pregunta de si olvidó la contraseña.
+- Los pasos y el orden de la preparación guiada (configuración inicial, pasos comunes, paso de extracción con temporizador y diagnóstico, y cierre) los definí yo al diseñar la aplicación original. El asistente solo los tradujo a notación BPMN, y yo verifiqué que el diagrama respetara esa secuencia.
+- En la preparación guiada, corregí el final del proceso para que termine con el mensaje «¡Preparación lista!» y un botón para volver a la vista de la receta. También definí qué hace la app por sí sola y qué consulta a la base de datos, para separar los lanes de Frontend y Backend.
+- El funcionamiento del asistente de IA (un globo flotante disponible desde cualquier pantalla, asíncrono, con la respuesta validada por el backend tras comunicarse con la API externa) es un diseño propio de la aplicación. El asistente de IA lo modeló en BPMN, y yo revisé que el diagrama respetara ese comportamiento.
+- Para los integrantes, el asistente sugirió nombres ficticios. Descarté la idea y armé el equipo con dos cuentas reales mías, y lo declaré en el README.
+
