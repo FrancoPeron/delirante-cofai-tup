@@ -1,4 +1,4 @@
-# Cofia — Aplicación de café de especialidad
+# COFAI — Aplicación de café de especialidad
 
 > Trabajo Práctico Integrador y Progresivo (TPI)
 > Organización Empresarial · Tecnicatura Universitaria en Programación a Distancia · UTN
@@ -7,7 +7,7 @@
 
 ## Enlaces
 
-- Repositorio público: https://github.com/FrancoPeron/Cofia
+- Repositorio público: [https://github.com/FrancoPeron/Cofia](https://github.com/FrancoPeron/delirante-cofai-tup)
 
 ## Integrantes
 
