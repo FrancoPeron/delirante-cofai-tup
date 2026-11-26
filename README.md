@@ -3,7 +3,7 @@
 > Trabajo Práctico Integrador y Progresivo (TPI)
 > Organización Empresarial · Tecnicatura Universitaria en Programación a Distancia · UTN
 
-**Cofia** es una aplicación Expo + React Native Web para explorar métodos de café, usar una calculadora de recetas, guardar recetas propias y consultar un asistente de IA. Fue pensada para Café Delirante (tostadora y cafeterías de especialidad de Bariloche) y acerca el café de especialidad a quienes recién empiezan.
+**Cofai** es una aplicación Expo + React Native Web para explorar métodos de café, usar una calculadora de recetas, guardar recetas propias y consultar un asistente de IA. Fue pensada para Café Delirante (tostadora y cafeterías de especialidad de Bariloche) y acerca el café de especialidad a quienes recién empiezan.
 
 ## Enlaces
 
